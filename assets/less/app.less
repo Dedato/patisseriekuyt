@@ -1,0 +1,470 @@
+/* Roots 6.5.0 */
+@import "bootstrap/bootstrap.less";
+@import "plugins.less";
+
+/* Layout */
+@navheight:50px;
+@footerh:40px;
+@boxpad:20px;
+@boxgap:25px;
+
+/* Colors */
+@white:    		#FFFFFF;
+@grey:         #999999;
+@darkgrey:     #333333;
+@kuytred: 		#B71234;
+@kuytdarkred: 	#4F0716;
+@kuytgold: 		#D9A02C;
+
+/* Typography */
+
+@helvetica: 	"Helvetica Neue",Helvetica,Arial,sans-serif;
+@sabonsc: 		"Sabon W01 SC Roman", Georgia, Times, "Times New Roman";
+
+/* Navbar */
+@navbar-default-link-color: 				@kuytred;
+@navbar-default-link-bg: 					@white;
+@navbar-default-link-hover-color: 		@white;
+@navbar-default-link-hover-bg: 			@kuytred;
+@navbar-default-link-active-color: 		@white;
+@navbar-default-link-active-bg: 			@kuytdarkred;
+@navbar-default-link-disabled-color: 	desaturate(@kuytred, 10%);
+@navbar-default-link-disabled-bg: 		@white;
+
+
+
+/* ==========================================================================
+   Webfonts
+   ========================================================================== */
+@import url("http://fast.fonts.net/lt/1.css?apiType=css&c=e38c188d-c42a-4171-9c05-119d11cba819&fontids=723563,1093943,723560,723554");
+@font-face{
+	font-family:"Sabon LT W01 Roman";
+	src:url("../fonts/723563/d30018fa-c2be-4921-a779-0a9b8db54fe7.eot?#iefix");
+	src:url("../fonts/723563/d30018fa-c2be-4921-a779-0a9b8db54fe7.eot?#iefix") format("eot"),url("../fonts/723563/d93bebe4-cefa-455e-8b51-eaae50be173e.woff") format("woff"),url("../fonts/723563/7849e7c1-08a0-4e13-a6cd-d2900c236af5.ttf") format("truetype"),url("../fonts/723563/d1246e5a-1d35-4bc9-b785-d05e0408a757.svg#d1246e5a-1d35-4bc9-b785-d05e0408a757") format("svg");
+}
+@font-face{
+	font-family:"Sabon W01 SC Roman";
+	src:url("../fonts/1093943/fa2786ee-4f10-499a-ac2a-9556b5a962b5.eot?#iefix");
+	src:url("../fonts/1093943/fa2786ee-4f10-499a-ac2a-9556b5a962b5.eot?#iefix") format("eot"),url("../fonts/1093943/dea58936-f317-46e1-9f94-d76f95f882c3.woff") format("woff"),url("../fonts/1093943/97cc3218-440b-467f-a13a-081fa7c46cc2.ttf") format("truetype"),url("../fonts/1093943/e035a53a-04ca-4096-94bd-d25a3385eeb4.svg#e035a53a-04ca-4096-94bd-d25a3385eeb4") format("svg");
+}
+@font-face{
+	font-family:"Sabon LT W01 Italic";
+	src:url("../fonts/723560/72d35842-98bb-422e-8e0a-686bfbabb630.eot?#iefix");
+	src:url("../fonts/723560/72d35842-98bb-422e-8e0a-686bfbabb630.eot?#iefix") format("eot"),url("../fonts/723560/a9baeb23-afc5-4d93-bf9f-b83fd44a2220.woff") format("woff"),url("../fonts/723560/bc89f8d2-4ac8-4c99-aa40-a31cea6d7b5a.ttf") format("truetype"),url("../fonts/723560/6bde6158-cef2-4c4f-b120-4e8b482c742d.svg#6bde6158-cef2-4c4f-b120-4e8b482c742d") format("svg");
+}
+@font-face{
+	font-family:"Sabon LT W01 Bold";
+	src:url("../fonts/723554/715e0d80-e882-47bb-8c8f-f741c701f43f.eot?#iefix");
+	src:url("../fonts/723554/715e0d80-e882-47bb-8c8f-f741c701f43f.eot?#iefix") format("eot"),url("../fonts/723554/95b1e5f7-abb3-4a8d-9565-de2d74d6cb98.woff") format("woff"),url("../fonts/723554/e87f6725-3ee0-4447-93d6-6323a452d273.ttf") format("truetype"),url("../fonts/723554/bb1e6ff9-4f2a-4e71-8755-7c1704c0016c.svg#bb1e6ff9-4f2a-4e71-8755-7c1704c0016c") format("svg");
+}
+
+
+/* ==========================================================================
+   Fontello Icons
+   ========================================================================== */
+@import url('../fonts/fontello/css/fontello.css');
+@import url('../fonts/fontello/css/animation.css');
+
+[class^="fontello-"]:before, [class*=" fontello-"]:before {width:auto; vertical-align:middle; }
+
+
+
+/* ==========================================================================
+   Sticky Footer
+   ========================================================================== */
+html, body {height:100%; }
+#wrap {
+	min-height:100%;
+	height:auto !important;
+	height:100%;
+	margin:0 auto -@footerh; /* negative footer margin */
+}
+#push, .content-info {min-height:@footerh; }
+@media (max-width: 767px) {
+	#push, .content-info {height:auto; min-height:@footerh; }
+}
+.wrap {padding-top:@navheight; /* navbar-fixed-top padding */ } 
+
+
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+body {color:@darkgrey; font-size:13px; background-color:@kuytgold; }
+
+h1, h2 {color:@kuytred; margin:0 0 15px; font-family:"Sabon LT W01 Bold", Georgia, Times, "Times New Roman", serif;}
+h3, h4, h5, h6 {color:@kuytred; margin:0 0 10px; font-family:@sabonsc; text-transform:lowercase; }
+h1 {font-size:32px; text-transform:uppercase; }
+h2 {font-size:28px; color:@grey; }
+h3 {font-size:21px; }
+
+a {
+	color:@kuytred;
+	text-decoration:none;
+	&:hover,
+	&:focus {
+		color:@kuytdarkred;
+		text-decoration:none;
+	}
+}
+
+p {margin:0 0 15px 0;}
+p:last-child, p:only-child {margin:0;}	
+
+blockquote {
+	position:relative;
+	border:none;
+	padding:0 0 0 40px;
+	quotes:"\201C" "\201D";
+	p, &:before {
+		color:@kuytred;
+		font-size:16px;
+		line-height:1.42857;
+		font-family:"Sabon LT W01 Italic", Georgia, Times, "Times New Roman", serif;
+	}
+	&:before {
+		display:block;
+		position:absolute;
+		left:0;
+		top:-15px;
+		content:open-quote;
+		font-size:60px;
+	}
+}
+::selection {background:@kuytred; color:@white; text-shadow:none} /* Selection background & text color */
+::-moz-selection {background:@kuytred; color:@white; text-shadow:none} /* Selection background & text color Firefox */
+::-webkit-selection {background:@kuytred; color:@white; text-shadow:none} /* Selection background & text color iOS */
+
+
+/* Buttons -------------------------------------------------------------*/
+.btn {
+	border:none;
+	border-radius:0;
+	font-family:@sabonsc;
+	&.btn-lg {
+		border-radius:0;
+	}
+	&.btn-primary {
+		background-color:@kuytred;
+		border:none;
+		color:@white;
+	}
+	&.btn-lg.btn-season {
+		position:absolute;
+		right:@boxpad * 2;
+		border-radius:50%;
+		width:200px;
+		height:195px;
+		padding:30px 25px;
+		margin:0 0 20px 20px;
+		font-size:28px;
+		line-height:1.1em;
+		text-align:center;
+		vertical-align:middle;
+		white-space:pre-wrap;
+		background:lighten(@kuytred, 5%) url('../img/patisserie-kuyt-bg-logo.png') no-repeat 0 0;
+		box-shadow:2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+		&:hover,
+		&:focus {
+			background-color:darken(@kuytred, 5%);
+		}
+		&.kerst {
+			background:darken(@kuytred, 5%) url('../img/patisserie-kuyt-bg-kerst.png') no-repeat 0 0;
+			&:hover,
+			&:focus {
+				background-color:lighten(@kuytred, 5%);
+			}
+		}
+	}
+	&:hover,
+	&:focus {
+		background-color:@kuytdarkred;
+	}
+}
+
+
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.banner {
+	background:@kuytgold;
+	margin-bottom:0;
+	.navbar-brand {
+		color:@white;
+		outline:none;
+		&:hover, &:focus {color:@kuytred;}
+	}
+	.navbar-toggle {
+		background-color:@white;
+		border:none;
+		border-radius:0;
+		margin-bottom:10px;
+		margin-right:0;
+		margin-top:10px;
+		padding:9px 10px;
+		.icon-bar {background-color:@kuytred;}
+		&:hover, &:focus {
+			background-color:@kuytred;
+			.icon-bar {background-color:@white;}
+		}
+	}
+	.navbar-collapse {
+  	max-height:360px;
+		.navbar-nav {
+			margin-top:0;
+			margin-bottom:0;
+			> li > a {
+				padding:15px;
+				font-size:16px;
+				font-family:@sabonsc;
+				text-transform:lowercase;
+				background-color:@navbar-default-link-bg;
+				color: @navbar-default-link-color;
+				outline:none;
+				transition:all 0.2s ease-in-out 0s;
+				&:hover,
+				&:focus {
+				  color: @navbar-default-link-hover-color;
+				  background-color: @navbar-default-link-hover-bg;
+				}
+			}
+			> .active > a {
+				&,
+				&:hover,
+				&:focus {
+				  color: @navbar-default-link-active-color;
+				  background-color: @navbar-default-link-active-bg;
+				}
+			}
+			> .disabled > a {
+				&,
+				&:hover,
+				&:focus {
+				  color: @navbar-default-link-disabled-color;
+				  background-color: @navbar-default-link-disabled-bg;
+				}
+			}
+			// Submenu
+			.dropdown-menu, &.submenu {
+				border:none;
+				border-radius:0;
+				box-shadow:none;
+				> li > a {				
+					padding:5px 10px;
+					font-size:14px;
+					font-family:@sabonsc;
+					text-transform:none;
+					background-color:@navbar-default-link-active-bg;
+					color:@navbar-default-link-active-color;
+					&:hover,
+					&:focus {
+					  color: @navbar-default-link-hover-color;
+					  background-color: @navbar-default-link-hover-bg;
+					}
+				}
+				> .active > a {
+					&,
+					&:hover,
+					&:focus {
+					  color: @navbar-default-link-hover-color;
+					  background-color: @navbar-default-link-hover-bg;
+					}
+				}
+				
+			}
+				
+		}	
+		&.in {
+			.navbar-nav {
+				background:@navbar-default-link-bg;	
+			}
+		}
+	}
+}
+
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+.content {
+	margin-top:@boxgap;
+	.logo {
+		margin-bottom:@boxgap;
+		img {max-width:220px; }
+	}
+}
+
+
+
+/* ==========================================================================
+   Primary Content
+   ========================================================================== */
+   
+.main {
+	.box {background:@white; padding:@boxpad;}
+	.page-header {border:none; margin:0; padding:0;}
+	img {.img-responsive(); }
+}
+
+/* Gallery Shortcode */
+.gallery-row {
+	padding:15px 0;
+	.thumbnail {
+	    border-color:@white;
+	    border-radius:0;
+	    margin-bottom:0;
+	    padding:0;
+	    &:hover,
+	    &:focus,
+	    &.active {border-color:@kuytred;}
+	}
+}
+
+
+/* ==========================================================================
+   Loops
+   ========================================================================== */
+.main {
+	.list {
+		&.products {
+			margin-bottom:@boxgap;
+			padding-bottom:@boxgap / 2;
+			border-bottom:1px dotted @grey;
+		}
+		.hentry {
+			margin-bottom:10px;
+			padding-bottom:10px;
+			.entry-image {
+				a {
+					img {
+						.transition(all 0.2s ease);
+						margin-bottom:0;
+					}
+					&:hover,
+					&:focus {
+						img {.box-shadow(0 0 2px 2px rgba(0,0,0,.1));}
+					}
+				}
+			}
+			.entry-content {
+				.entry-summary {
+					p {margin:0;}
+				}	
+			}
+		}
+	}
+	.terms {
+		margin-bottom:@boxgap;
+		h3 {color:@kuytdarkred; }
+		.entry-image {
+			a {
+				img {
+					.box-shadow(0 0 2px 2px rgba(0,0,0,.1));
+					.transition(all 0.2s ease);
+				}
+				&:hover,
+				&:focus {
+					img {.box-shadow(0 0 2px 2px rgba(0,0,0,.25)); }
+				}
+			}
+		}
+	}
+}
+
+
+/* ==========================================================================
+   Single
+   ========================================================================== */
+.single {
+	.main {
+		.entry-image {
+			margin-bottom:@boxgap;
+		}
+	}
+}
+
+
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+.sidebar { }
+
+
+
+/* ==========================================================================
+   Posts
+   ========================================================================== */
+.hentry header { }
+.hentry time { }
+.hentry .byline { }
+.hentry .entry-content { }
+.hentry footer { }
+
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.content-info {
+	border-top:1px solid @white;
+	.social {
+		margin:8px 0;
+		.btn {
+			color:@kuytred;
+			font-family:@helvetica;
+			border:none;
+			font-size:12px;
+			i {font-size:1.2em; margin-right:4px; }
+			&:hover, &:focus {color:@white; background:@kuytred;}
+		}
+	}
+	.copyright {
+		float:right;
+		margin:10px 0 5px;
+		color:@white;
+		font-size:12px;
+		width:auto;
+	}
+}
+
+
+
+/* ==========================================================================
+   WordPress Generated Classes
+   See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+   ========================================================================== */
+.aligncenter { display: block; margin: 0 auto; }
+.alignleft { float: left; }
+.alignright { float: right; }
+figure.alignnone { margin-left: 0; margin-right: 0; }
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media (min-width: @screen-sm-min) {
+	.main {
+		.list {
+			.hentry {
+				.entry-image {
+					padding-right:0;
+				}
+			}
+		}
+	}
+}
+@media (min-width: @screen-md-min) {
+	.banner {
+  	background:none;
+    .navbar-brand {padding:15px 15px 10px 55px;}
+  }  
+	.content {
+		margin-top:@boxgap * 2;
+		.logo {
+			img {max-width:306px; }
+		}
+	}
+}

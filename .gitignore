@@ -1,0 +1,15 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+node_modules
+assets/css/
+assets/js/scripts.js
+assets/js/scripts.min.js
+assets/js/scripts.min.js.map
+assets/js/vendor
+.ftppass
+.grunt
+assets/manifest.json
+assets/js/scripts.min.js
+assets/js/scripts.js
+.DS_Store
+DEDATO_INSTRUCTIONS.md
